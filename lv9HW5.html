@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrimeNumber(num){
+            if(num===0 || num===1){
+                return false;
+            }
+            for(let i=2;i<num;i++){
+                if(num%i==0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(isPrimeNumber(2));
+        console.log(isPrimeNumber(1));
+        console.log(isPrimeNumber(0));
+        console.log(isPrimeNumber(6));
+        console.log(isPrimeNumber(61));
+        console.log(isPrimeNumber(656));
+        console.log(isPrimeNumber(363));
+        console.log(isPrimeNumber(65));
+
+        //HW 4 COMPLETE
+        let num=2;
+        let i=0;
+        while(true){
+            if(isPrimeNumber(num)){
+                console.log(num);
+                i++;
+                if(i>=5){
+                    break;
+                }
+            }
+            num++;
+        }
+    </script>
+    
+</body>
+</html>

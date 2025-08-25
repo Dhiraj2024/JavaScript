@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enter Two Numbers to Add</h2>
+    
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1">
+    <br><br>
+
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2">
+    <br><br>
+
+    <button onclick="addNumbers()">Add Numbers</button>
+
+    <h3>Result: <span id="result"></span></h3>
+
+    <script>
+        function addNumbers() {
+            // Get the values from the input fields
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+
+            // Add the numbers
+            var sum = num1 + num2;
+
+            // Display the result
+            document.getElementById('result').textContent = sum;
+        }
+    </script>
+<script>
+    function addNumbers(num1, num2) {
+        return num1 + num2;
+    }
+    
+    // Example usage
+    let result = addNumbers(5, 3);
+    console.log(result); // Output: 8
+</script>
+</body>
+</html>

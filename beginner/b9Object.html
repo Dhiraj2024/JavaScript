@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = ["apple", "banana", "cherry"];
+
+console.log("Initial array:", fruits); 
+// ["apple", "banana", "cherry"]
+
+// ✅ 1. push() — last me item add
+fruits.push("mango");
+console.log("After push:", fruits); 
+// ["apple", "banana", "cherry", "mango"]
+
+// ✅ 2. pop() — last item remove
+fruits.pop();
+console.log("After pop:", fruits); 
+// ["apple", "banana", "cherry"]
+
+// ✅ 3. shift() — first item remove
+fruits.shift();
+console.log("After shift:", fruits); 
+// ["banana", "cherry"]
+
+// ✅ 4. unshift() — first me item add
+fruits.unshift("kiwi");
+console.log("After unshift:", fruits); 
+// ["kiwi", "banana", "cherry"]
+
+// ✅ 5. indexOf() — index number find
+let index = fruits.indexOf("banana");
+console.log("Index of banana:", index); 
+// 1
+
+// ✅ 6. includes() — check if value exists
+let hasMango = fruits.includes("mango");
+console.log("Includes mango:", hasMango); 
+// false
+
+// ✅ 7. join() — array to string
+let fruitString = fruits.join(" Mc-fan ");
+console.log("Joined string:", fruitString); 
+// "kiwi Mc-fan banana Mc-fan cherry"
+
+    </script>
+</body>
+</html>

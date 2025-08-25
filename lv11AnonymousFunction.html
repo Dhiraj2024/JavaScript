@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sum =function(val1,val2){
+            return val1+val2;
+        };
+        
+       let sum3= function(val1,val2,val3,sum2){//yaha ka sum2 sum hin to hai name matter nahin karta...
+        sum4=sum2(val1,val2);//4+5=9
+        return sum2(sum4,val3);//9+6=15
+       }
+       console.log(sum3(4,5,6,sum));
+       console.log(typeof sum3);//to isse pata chala ex int,float,char,function  ye bhi (data type) hai...
+    </script>
+</body>
+</html>

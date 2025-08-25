@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="output"></div>
+    <script>
+let students = [
+  { name: "Amit", age: 20 },
+  { name: "Riya", age: 22 },
+  { name: "Karan", age: 19 }
+];
+
+let employee = [ 
+  { name: "rmit", age: 20 }, 
+  { name: "Rsya", age: 22 }, 
+  { name: "Klaran", age: 19 }  
+];
+students.forEach(s => console.log(s.name));
+employee.forEach(e => console.log(e.name));
+
+
+console.log(students.filter(s => s.age < 21));
+console.log(employee.filter(e => e.age < 21));
+
+let employeeNames = employee.map(e => e.name);
+console.log(employeeNames);  // ["rmit", "Rsya", "Klaran"]
+
+
+</script> 
+</body>
+</html>

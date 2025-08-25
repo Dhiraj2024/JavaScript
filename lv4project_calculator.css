@@ -1,0 +1,32 @@
+#calculator {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    width: 200px;
+    background-color: rgba(0, 72, 255, 0.445);
+  }
+  
+  #display {
+    margin: 10px;
+    width: 85%;
+    font-size: 25px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .button {
+    width: 45px;
+    height: 45px;
+    margin: 3px;
+  }
+  .button-container :hover{
+    border-bottom: 2px solid #ffffff;
+    background-color: rgba(60, 186, 205, 0.198);
+  }
+  .button-container :active{
+    background-color: rgba(25, 224, 255, 0.851);
+    font-size: 35px;
+  }

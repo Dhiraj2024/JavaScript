@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text"  placeholder="enter the value"  id="input">
+  <input type="date"  id="output">
+<button onclick="Todo()">add</button>
+  <p id="print"></p>
+  <script>
+    function Todo(){
+    let word=document.querySelector('#input').value;
+    let words=document.querySelector('#output').value
+     document.querySelector('#print').innerText=word+words;
+     document.querySelector('#input').value=' ';
+     document.querySelector('#output').value=' ';
+    }
+  </script>
+</body>
+</html>

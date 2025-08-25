@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cricket Game</title>
+</head>
+<body>
+  
+  <button  onclick="
+  let random = Math.random() * 3;
+  let bot;
+  if (random > 0 && random <= 1) {
+    bot = 'Stone';
+  } else if (random > 1 && random <= 2) {
+    bot = 'Paper';
+  } else {
+    bot = 'Seajer'
+  }
+  let result;
+  if (bot === 'Paper') {
+    result = '--->User won<---';
+  } else if (bot === 'Stone') {
+    result = ('--->Its a tie<---');
+  } else if (bot === 'Seajer') {
+    result = '--->Computer has won<---';
+  }
+  alert(`You have chosen Stone  Computer choice is ${bot} and ${result}`);  ">Stone </button>
+</body>
+</html>

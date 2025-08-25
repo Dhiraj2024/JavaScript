@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = { name: "Amit", age: 25 };
+
+// Save
+localStorage.setItem("user", JSON.stringify(user));
+
+// Retrieve
+
+let name = localStorage.getItem("name"); 
+
+let data = JSON.parse(localStorage.getItem("user"));
+console.log(data.name); // "Amit"
+
+    </script>
+</body>
+</html>
+<!-- // Set
+localStorage.setItem("name", "Amit");
+
+// Get
+let name = localStorage.getItem("name");
+
+// Remove
+localStorage.removeItem("name");
+
+// Clear all
+localStorage.clear(); -->
+<!------------------------------------------------->
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <input type="text" placeholder="enter here text" id="text-btn">
+    <input type="date"  id="date-btn">
+    <button onclick="addTodo();">add Task</button>
+    <h3 id="output"></h3>
+    <script>
+       let arr=[{
+        ITEM:'hello bolo',
+        DATE:'17/05/2025'
+       }];
+       display();
+function addTodo(){
+       let itemss=document.querySelector('#text-btn');
+       let datess=document.querySelector('#date-btn');
+       let itemValue=itemss.value;
+       let dateValue=datess.value;
+       arr.push({ITEM:itemValue,DATE:dateValue});
+       itemss.value=' ';
+       datess.value=' ';
+display();
+}
+function display(){
+    let element=document.querySelector('#output');
+    let html=' ';
+    for(let i=0;i<arr.length;i++){
+        let {ITEM,DATE}=arr[i];
+     html +=`<span>${ITEM}</span>
+             <span>${DATE}</span>
+             <button onclick="arr.splice(${i},1), display();">Dalete</button><br>`
+               
+    }
+    element.innerHTML=html;
+}
+    </script>
+</body>
+</html>

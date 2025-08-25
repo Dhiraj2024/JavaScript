@@ -1,0 +1,29 @@
+<!-- Create an array of numbers [5,6]. Add 4 at the beginning and
+7 at the end of the array. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+    <h3 id="greeting"></h3>
+    <script>
+ let date=new Date();
+ let hours=date.getHours();
+ let heading=document.querySelector('#greeting');
+
+ if(hours >5 && hours<12 ){
+    heading.innerText='good morning';
+ }else if(hours>12 && hours<18){
+    heading.innerText='Good afternoon';
+ }else if(hours>=18 && hours<19){
+    heading.innerText='good Night';
+ }else{
+   heading.innerText('Soo zao⌛');
+ }
+
+    </script>  
+</body>
+</html>

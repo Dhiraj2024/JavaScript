@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .output {
+      font-family: Arial;
+      margin-top: 20px;
+    }
+    .person {
+      background-color: #dcbfbf;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.8);
+    }
+    .person-name {
+      font-weight: bold;
+      color: darkblue;
+    }
+    .person-age {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<div class="output"></div>
+
+<script>
+  let people = [
+    { name: "Amit", age: 22 },
+    { name: "Tina", age: 17 },
+    { name: "Ravi", age: 25 },
+    { name: "Sita", age: 19 },
+    { name: "Rahul", age: 30 }
+  ];
+
+  let adults = people.filter(p => p.age > 18);
+console.log(adults);
+  document.querySelector(".output").innerHTML =
+    adults.map(p => `<div class="person">
+        <span class="person-name">${p.name}</span> 
+        <span class="person-age">(${p.age} years old)</span>
+      </div>`).join("");
+</script>
+</body>
+</html>

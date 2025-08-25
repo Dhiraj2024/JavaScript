@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌦️ Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #e8f0ff;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    #weather {
+      margin-top: 25px;
+      background: white;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    img {
+      width: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌍 Live Weather App</h1>
+
+  <input type="text" id="city" placeholder="Enter city name" />
+  <button onclick="getWeather()">Get Weather</button>
+
+  <div id="weather"></div>
+
+  <script>
+    async function getWeather() {
+      const city = document.getElementById("city").value.trim();
+      const apiKey = "93f729e4dcf8616b1ffdc0e77b9f8552"; // 🔁 Replace this with your actual API key
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      const weatherDiv = document.getElementById("weather");
+      weatherDiv.innerHTML = "Loading...";
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("City not found!");
+
+        const data = await response.json();
+        const iconCode = data.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+        weatherDiv.innerHTML = `
+          <h2>${data.name}, ${data.sys.country}</h2>
+          <img src="${iconUrl}" alt="Weather Icon" />
+          <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
+          <p><strong>Condition:</strong> ${data.weather[0].main}</p>
+          <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+        `;
+      } catch (error) {
+        weatherDiv.innerHTML = `<p style="color:red;">❌ ${error.message}</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

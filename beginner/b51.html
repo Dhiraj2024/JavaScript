@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="enter ">
+    <input type="date" id="date">
+    <button onclick="addtext()">add</button>
+    <h1 class="output"></h1>
+    <script>
+        function addtext(){
+            let inputs=document.querySelector('#input').value;
+            let dates=document.querySelector('#date').value;
+          
+            document.querySelector('.output').innerText=`${inputs}"  "    ${dates}`;
+            inputs.value='';
+             dates.value='';
+
+        }
+    </script>
+</body>
+</html>

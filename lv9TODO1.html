@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="
+    let x=Bot();
+    let y=Result('Bat',x);
+    Print('Bat',x,y);">Bat</button>
+    <script>
+      let score={
+        win:0,
+        los:0,
+        tie:0,
+        displyScore: function(){
+            return ` win:${score.win},los:${score.los},tie:${score.tie}`;
+        }
+      };
+        function Bot(){
+      let random=Math.random()*3;
+      if(random>0 && random<=1){
+        return 'Bat';
+      }
+       else if(random>1 && random<=2){
+        return 'Ball';
+      }
+      else{
+        return 'Wicket';
+      }}
+        
+
+        function Result(userMove,computerMove){
+            if(userMove==='Bat'){
+                if(computerMove==='Bat'){
+                    score.tie++;
+                    return 'Its tie:';
+                }
+              else  if(computerMove==='Ball'){
+                score.win++;
+                    return 'You won';
+                }
+                else{
+                    score.los++;
+                    return 'You Losses';
+                }
+            }
+        }
+        function Print(userMove,computerMove,Result){
+          alert(`i have chosen ${userMove} computer chosen${computerMove} so ${Result}
+          
+          ${score.displyScore()}`);
+        }
+    </script>
+</body>
+</html>

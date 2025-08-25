@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="login()">Login</button>
+<button onclick="checkUser()">Check Remembered User</button>
+
+<script>
+  function login() {
+    document.cookie = "username=amit; expires=Fri, 1 Jan 2026 12:00:00 UTC; path=/";
+    alert("Logged in and remembered!");
+  }
+
+  function checkUser() {
+    if (document.cookie.includes("username")) {
+      alert("Welcome back, Dhiraj!");
+    } else {
+      alert("No user remembered.");
+    }
+  }
+</script>
+
+</body>
+</html>
+</html>

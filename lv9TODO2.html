@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Here Some Text </h1>
+    <input class="hello" type="text " placeholder="enter the value">
+    <button onclick="todo()">add karo</button>
+     <p class="output"></p>
+     <script>
+       let arr=[{
+            item:'khana kha lo.',
+       }];
+           disply();
+
+        function todo(){
+        let input=document.querySelector('.hello');
+        let itemss= inputElement.value;
+        arr.push({item: Itemss});
+        input.value = '';
+        display();
+
+        }
+
+        function disply(){
+            let Element=document.querySelector('.output');
+            let num = '';
+            for (let i = 0; i < arr.length; i++) {
+                let {item} = arr[i];
+            num=num+`<span>${item}</span>`;
+
+        }
+        Element.innerHTML =num;
+    }
+     </script>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <h1>Todo App</h1>
+    <input type="text" placeholder="enter the value" id="todo-text">
+    <input type="date"  id="todo-date">
+    <button  onclick="TodoApp()">Add Task</button>
+    <h3 id="print"></h3>
+
+    <script>
+    let arr=[
+    {
+        itemhi:'hello bolo',
+        datehi:'13/5/2025'
+    },
+    {
+        itemhi:'chai pilo',
+        datehi:'12/5/2025'
+    }
+    ];
+display();
+
+function TodoApp(){
+  let textes=document.querySelector('#todo-text');
+  let dates=document.querySelector('#todo-date');
+  let todotext=textes.value;
+  let tododate=dates.value;
+  arr.push({itemhi:todotext,datehi:tododate});
+todotext.value=' ';
+tododate.value=' ';
+
+display();
+}
+
+function display(){
+    let container=document.querySelector('#print');
+    let stor=' ';
+    for(let i=0;i<arr.length;i++){
+        let {itemhi,datehi} =arr[i];
+        stor+=`<span>${itemhi}</span>
+               <span>${datehi}</span>
+               <button  onclick="arr.splice(${i}, 1);
+                display();">Delete</button><br>`;
+    }
+    container.innerHTML = stor;
+}
+      
+    </script>
+</body>
+</html>

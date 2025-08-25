@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let order = new Promise(function(resolve, reject) {
+  let foodReady = true;
+
+  if (foodReady) {
+    resolve("Food delivered!");
+  } else {
+    reject("Delivery failed!");
+  }
+});
+
+order
+  .then(function(result) {
+    console.log(result); // If resolved
+  })
+  .catch(function(error) {
+    console.log(error); // If rejected
+  });
+
+    </script>
+</body>
+</html>

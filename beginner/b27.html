@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="nameInput" src="1.jpg" alt="hayabhusa" style="width: 200px;"><br><br>
+<button onclick="showName()">Submit</button>
+
+<script>
+function showName() {
+  let img = document.getElementById("nameInput");
+  if (img.src.includes("1.jpg")) {
+    img.src = "2.jpg";
+  } else {
+    img.src = "1.jpg";
+  }
+}
+
+</script>
+
+</body>
+</html>

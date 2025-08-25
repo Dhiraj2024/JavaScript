@@ -1,0 +1,28 @@
+<!-- Create an Object with two references and log changes to
+one object by changing the other one. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let product={
+            size: 's',
+            name: 'Shirt',
+            fit: 'Slim fit',
+
+        };
+        let copyProduct=product;
+        console.log(copyProduct);
+        consoleProduct.size='M';
+        console.log(product);
+        copyProduct.fit='Regular Fit';
+        console.log(copyProduct);
+ 
+    </script>
+    
+</body>
+</html>

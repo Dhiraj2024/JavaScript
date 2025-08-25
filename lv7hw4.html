@@ -1,0 +1,33 @@
+<!-- Given an object {message: 'good job', status: 'complete'},
+use de-structuring to create two variables message and
+status. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Do alag tarike objects define karne ke -->
+    <script>
+        let product={ 
+            size: 's', 
+            name: 'Shirt',
+            fit: 'Slim fit',
+     'delivery-time': 'same day delivery',
+        };
+        console.log(product['delivery-time']);
+
+        let obj={
+            message: 'Good job',
+            status: 'Complete',
+
+        };
+        console.log(obj);
+        let {message,status}=obj;
+        console.log(message);
+        console.log(status);
+    </script>
+    
+</body>
+</html>

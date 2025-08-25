@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+      background: #f1f1f1;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .option {
+      background: white;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+    .option:hover {
+      background: #e0f7fa;
+    }
+    #nextBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="question">Loading question...</h2>
+
+  <div id="options"></div>
+
+  <button id="nextBtn" onclick="nextQuestion()">Next</button>
+
+  <h3 id="scoreBox"></h3>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the capital of India?",
+        options: ["Delhi", "Mumbai", "Kolkata", "Chennai"],
+        answer: "Delhi"
+      },
+      {
+        question: "Which language runs in a browser?",
+        options: ["Java", "C", "Python", "JavaScript"],
+        answer: "JavaScript"
+      },
+      {
+        question: "What is 2 + 2?",
+        options: ["3", "4", "5", "22"],
+        answer: "4"
+      },
+      {
+        question: "Which tag is used to include JS in HTML?",
+        options: ["<js>", "<script>", "<javascript>", "<code>"],
+        answer: "<script>"
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      document.getElementById("scoreBox").innerText = "";
+      document.getElementById("nextBtn").style.display = "none";
+
+      const q = quizData[current];
+      document.getElementById("question").innerText = q.question;
+
+      const optionsBox = document.getElementById("options");
+      optionsBox.innerHTML = "";
+
+      q.options.forEach(opt => {
+        const btn = document.createElement("div");
+        btn.classList.add("option");
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(opt);
+        optionsBox.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const correct = quizData[current].answer;
+      const options = document.querySelectorAll(".option");
+
+      options.forEach(option => {
+        option.style.pointerEvents = "none";
+        if (option.innerText === correct) {
+          option.style.background = "#c8e6c9"; // green
+        }
+        if (option.innerText === selected && selected !== correct) {
+          option.style.background = "#ffcdd2"; // red
+        }
+      });
+
+      if (selected === correct) score++;
+
+      document.getElementById("nextBtn").style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+      current++;
+      if (current < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("question").innerText = "🎉 Quiz Completed!";
+        document.getElementById("options").innerHTML = "";
+        document.getElementById("nextBtn").style.display = "none";
+        document.getElementById("scoreBox").innerText = `Your Score: ${score} / ${quizData.length}`;
+      }
+    }
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>

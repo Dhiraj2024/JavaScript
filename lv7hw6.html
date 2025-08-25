@@ -1,0 +1,44 @@
+<!-- Create an array copy using slice method -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      button{
+        size: 34px;
+        font-size: 34px;
+        color: cornflowerblue;
+        background-color: black;
+      }
+      button:active{
+        margin-top:35px;
+      }
+    </style>
+</head>
+<body>
+  <h1 id="name"></h1>
+    <button id="my-button" onclick="press();">0</button>
+   
+    <script>
+    
+     let count=0;
+     function press(){
+    let button=document.querySelector('#my-button');
+    count++;
+    button.innerText=count;
+    if(count%2===0){
+      button.innerText=count+'hi';
+      document.querySelector('#name').innerText='EVEN number...bhagja😂';
+    }
+    else{
+      button.innerText=count+'hello';
+      document.querySelector('#name').innerText='ODD number...bhagjaa🤣';
+    }
+    }
+    </script>  
+</body>
+</head>
+</html>

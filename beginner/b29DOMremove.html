@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Changer</title>
+</head>
+<body>
+
+ <p id="myPara">This paragraph will be removed.</p>
+<button onclick="removeParagraph()">Remove Paragraph</button>
+
+<script>
+  function removeParagraph() {
+    const para = document.getElementById("myPara");
+    para.remove(); // removes the paragraph
+  }
+</script>
+
+
+</body>
+</html>

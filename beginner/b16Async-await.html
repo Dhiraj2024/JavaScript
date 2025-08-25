@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="getUser()">Get User</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function getUser() {
+      try {
+        const res = await fetch("https://dummyjson.com/users/1");
+        const data = await res.json();
+        console.log("User data:", data.address);
+        document.getElementById("output").textContent = JSON.stringify(data.address, null, 2);
+      } catch (error) {
+        console.log("Error:", error.message);
+      }
+    }
+  </script>
+</body>
+</html>

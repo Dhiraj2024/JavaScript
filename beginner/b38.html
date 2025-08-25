@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Search Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f7f7f7;
+    }
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      margin-bottom: 5px;
+      background: #fff;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔍 Live Search Filter</h2>
+  <input type="text" id="searchInput" placeholder="Search names..." />
+
+  <ul id="nameList">
+    <li>Aryan</li>
+    <li>Ritika</li>
+    <li>Rahul</li>
+    <li>Anjali</li>
+    <li>Sachin</li>
+    <li>Pooja</li>
+    <li>Kunal</li>
+    <li>Priya</li>
+    <li>Ravi</li>
+  </ul>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const listItems = document.querySelectorAll("#nameList li");
+
+    searchInput.addEventListener("keyup", function () {
+      const filter = searchInput.value.toLowerCase();
+
+      listItems.forEach(function (item) {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

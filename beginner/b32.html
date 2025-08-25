@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Quote App</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    #quoteBox {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+      width: 300px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="quoteBox">
+    <p id="quote">Click the button to load a quote.</p>
+    <p id="author"></p>
+    <button onclick="getQuote()">New Quote</button>
+  </div>
+
+  <script>
+    function getQuote() {
+      fetch("https://api.quotable.io/random")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("quote").innerText = `"${data.content}"`;
+          document.getElementById("author").innerText = `– ${data.author}`;
+        })
+        .catch(error => {
+          document.getElementById("quote").innerText = "Failed to fetch quote.";
+          console.error(error);
+        });
+    }
+  </script>
+
+</body>
+</html>

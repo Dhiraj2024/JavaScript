@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo App</h1>
+    <input type="text" placeholder="enter something" id="todo-text">
+    <input type="date"  id="todo-date">
+    <button onclick="TodoApp()">Add tak</button>
+<h2 id="output"></h2>
+
+
+    <script>
+let arr=[
+{
+    itemhi:'hello bolo',
+    datehi:'5/6/2005'
+}
+];
+display();
+function TodoApp(){
+    let itemss=document.querySelector('#todo-text');
+    let datess=document.querySelector('#todo-date');
+    let itemval=itemss.value;
+    let dateval=datess.value;
+    arr.push({itemhi:itemval,datehi:dateval});
+    itemval.innerHtml=' ';
+    dateval.innerHtml=' ';
+}
+function display(){
+    let container=document.querySelector('#output');
+    let stor=' ';
+    for(let i=0;i<arr.length;i++){
+        let {itemhi,datehi}=arr[i];
+           stor+=`<span>${itemhi}</span>
+                 <span>${itemhi}</span>
+                 <button onclick="arr.splice(${i},0);
+                 display();">Delete</button><br>
+                 `;
+    }
+    container.innerHTML=stor;
+}
+    </script>
+</body>
+</html>

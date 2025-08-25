@@ -1,0 +1,186 @@
+1)a)#include <iostream>
+using namespace std;
+
+// function to calculate area of circle
+float areaOfCircle(float radius) {
+    return 3.14159 * radius * radius;
+}
+
+int main() {
+    float r;
+    cout << "Enter radius of circle: ";
+    cin >> r;
+
+    cout << "Area of circle = " << areaOfCircle(r) << endl;
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------
+
+
+b) #include <iostream>
+using namespace std;
+
+// function to calculate area of triangle (base & height method)
+float areaOfTriangle(float base, float height) {
+    return 0.5 * base * height;
+}
+
+int main() {
+    float b, h;
+    cout << "Enter base of triangle: ";
+    cin >> b;
+    cout << "Enter height of triangle: ";
+    cin >> h;
+
+    cout << "Area of triangle = " << areaOfTriangle(b, h) << endl;
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------
+
+2)#include <iostream>
+using namespace std;
+
+// function to check prime
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int num;
+    cout << "Enter the number between 101-999: ";
+    cin >> num;
+
+    if (num >= 101 && num <= 999) {
+        if (isPrime(num)) {
+            cout << "It is a prime number" << endl;
+        } else {
+            cout << "It is not a prime number" << endl;
+        }
+    } else {
+        cout << "Number not in range (101-999)" << endl;
+    }
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------
+
+3)#include <iostream>
+using namespace std;
+
+int main() {
+    int rows, cols;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+    cout << "Enter number of columns: ";
+    cin >> cols;
+
+    int A[50][50], B[50][50], C[50][50];
+
+    cout << "\nEnter elements of first matrix (A):\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cin >> A[i][j];
+        }
+    }
+
+    cout << "\nEnter elements of second matrix (B):\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cin >> B[i][j];
+        }
+    }
+
+    // Matrix Addition
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    cout << "\nResultant Matrix (A + B = C):\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << C[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------
+4)#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1, 3, 2, 4, 5};
+    int maxVal = arr[0];
+    int minVal = arr[0];
+
+    // loop to find max and min
+    for (int i = 1; i < 5; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+        }
+        if (arr[i] < minVal) {
+            minVal = arr[i];
+        }
+    }
+
+    cout << "Maximum = " << maxVal << endl;
+    cout << "Minimum = " << minVal << endl;
+
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------
+5)a)  
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[8] = {1, 3, 5, -2, 6, -8, 9, 12};
+    int sum = 0;
+
+    for (int i = 0; i < 8; i++) {
+        if (arr[i] > 0) {   // only positive numbers
+            sum += arr[i];
+        }
+    }
+
+    cout << "Sum of positive numbers = " << sum << endl;
+
+    return 0;
+}
+
+b) #include <iostream>
+using namespace std;
+
+int main() {
+    int arr[8] = {1, 3, 5, -2, 6, -8, 9, 12};
+    int negSum = 0;
+
+    for (int i = 0; i < 8; i++) {
+        if (arr[i] < 0) {   // only negative numbers
+            negSum += arr[i];
+        }
+    }
+
+    cout << "Sum of negative numbers = " << negSum << endl;
+
+    return 0;
+}

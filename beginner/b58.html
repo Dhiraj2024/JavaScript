@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Console Calculator</title>
+</head>
+<body>
+  <script>
+    let a = parseFloat(prompt("Enter first number:"));
+    let b = parseFloat(prompt("Enter second number:"));
+    let operator = prompt("Enter operator (+, -, *, /, %, **):");
+
+    let result;
+
+    switch (operator) {
+      case '+':
+        result = a + b;
+        break;
+      case '-':
+        result = a - b;
+        break;
+      case '*':
+        result = a * b;
+        break;
+      case '/':
+        result = b !== 0 ? a / b : "Cannot divide by zero";
+        break;
+      case '%':
+        result = a % b;
+        break;
+      case '**':
+        result = a ** b;
+        break;
+      default:
+        result = "Invalid operator";
+    }
+
+    console.log("First number:", a);
+    console.log("Second number:", b);
+    console.log("Operator:", operator);
+    console.log("Result:", result);
+  </script>
+</body>
+</html>

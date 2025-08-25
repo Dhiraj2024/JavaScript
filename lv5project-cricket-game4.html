@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Cricket Game</title>
+   <!--<link rel="stylesheet" href="lv5project-cricket-game.css">-->
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+ /* Container */
+#calculator {
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+  }
+       /* Title */
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+     /* Button Container */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  /* Button Styles */
+.button {
+    font-size: 1.2rem;
+    padding: 15px 25px;
+    cursor: pointer;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100px;
+  }
+  .button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+  }
+  
+  .button:active {
+    transform: scale(1);
+  }
+  /* Alert Styles */
+.alert {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #calculator {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .button-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .button {
+      width: 100%;
+    }
+  }
+
+</style>
+<body>
+    <div id="calculator">
+  
+    <h1>Stone Paper Seajer Game</h1>
+    
+    <div class="button-container">
+
+        <button  class="button"  onclick="
+        //This will generate random number between 0 and 3 
+        let random = Math.random() * 3;
+        let bot;
+        if (random > 0 && random <= 1) {
+          bot = 'Stone';
+          // console.log('computer choice is Stone');
+        } else if (random > 1 && random <= 2) {
+          bot = 'Paper';
+          // console.log('computer choice is Paper');
+        } else {
+          bot = 'Seajer';
+          // console.log('computer choice is Seajer');
+        }
+      let result;
+  if (bot === 'Paper') {
+    result = '--->User won<---';
+  } else if (bot === 'Stone') {
+    result = ('--->Its a tie<---');
+  } else if (bot === 'Seajer') {
+    result = '--->Computer has won<---';
+  }
+
+  alert(`You have chosen Stone  Computer choice is ${bot} and ${result}`);  ">Stone </button>
+  <button   class="button"  onclick="
+  //This will generate random number between 0 and 3
+  random = Math.random() * 3;
+  if (random > 0 && random <= 1) {
+    bot = 'Stone';
+    // console.log('computer choice is Stone');
+  } else if (random > 1 && random <= 2) {
+    bot = 'Paper';
+    // console.log('computer choice is Paper');
+  } else {
+    bot = 'Seajer';
+    // console.log('computer choice is Seajer');
+  }
+if (bot === 'Paper') {
+    result = `===It's a tie<===`;
+  } else if (bot === 'Stone') {
+    result = '===>Computer has won<===';
+  } else if (bot === 'Seajer') {
+    result = '====>User won<===';
+  }
+
+  alert(`You have chosen Paper  Computer choice is ${bot} and ${result}`);  ">Paper</button>
+  <button  class="button"  onclick="
+  //This will generate random number between 0 and 3
+  random = Math.random() * 3;
+  if (random > 0 && random <= 1) {
+    bot = 'Stone';
+    // console.log('computer choice is Stone');
+  } else if (random > 1 && random <= 2) {
+    bot = 'Paper';
+    // console.log('computer choice is Paper');
+  } else {
+    bot = 'Seajer'
+    // console.log('computer choice is Seajer');
+  }
+  if (bot === 'Paper') {
+    result = '+++>Computer has won<+++';
+  } else if (bot === 'Stone') {
+    result = '+++>User won<+++...';
+  } else if (bot === 'Seajer') {
+    result =  '+++>Its a tie<+++';
+  }
+
+  alert(`You have chosen Seajer  Computer choice is ${bot} and ${result}`);  "> Seajer </button> 
+
+</div>
+</div>
+
+
+</body>
+</html>

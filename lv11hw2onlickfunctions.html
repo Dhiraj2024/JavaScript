@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  .btn, .btn2{
+    border-radius: 5px;
+    font-weight: 600;
+    color: aliceblue;
+    height: 30px;
+    width: 78px;
+    background-color: rgb(255, 0, 0);
+  }
+.btnhover{
+  border-radius: 5px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    height: 30px;
+    width: 90px;
+    background-color: rgba(255, 102, 0, 0.813);
+   
+}
+.btnhover2{
+  border-radius: 5px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    height: 30px;
+    width: 90px;
+    background-color: rgba(19, 166, 174, 0.823);
+   
+}
+</style>
+<body>
+    <button class="btn"  onclick="setTimeout(doublesize,2000);">Subscribe</button>
+    <button class="btn2"  onclick="doublesize2();">Bell</button>
+    <script>
+     function doublesize(){
+        let element=document.querySelector('.btn');
+        element.classList.add('btnhover');
+        element.innerText="Subscribed";
+     }
+     function doublesize2(){
+     let element2=document.querySelector('.btn2');
+     element2.classList.add('btnhover2');
+     element2.innerText="Belled";
+     }
+    </script>
+</body>
+</html>

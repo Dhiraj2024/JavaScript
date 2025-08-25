@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="div"></h1>
+  <h1 class="divv"></h1>
+  <script>
+    let product={
+      price:565,
+      item:'t-shirt'
+    };
+    let x=`price of the product is ${product.price}`
+    document.querySelector('.div').innerHTML=x;
+  console.log(`price of the product is ${product.price}`);
+  let {price} =product;//tagda concept...
+      let y=`price of product  ${price}`
+  document.querySelector('.divv').innerHTML=y;
+  console.log(`value is ${price}`);
+  </script>
+</body>
+</html>

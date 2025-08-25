@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="output"></div>
+    <script>
+ let people = [
+  { name: "Amit", age: 22 },
+  { name: "Tina", age: 17 },
+  { name: "Ravi", age: 25 }
+];
+  let adults = people.filter(p => p.age > 18);
+  document.querySelector(".output").innerHTML =
+   adults.map(p => `${p.name} (${p.age})`).join("<br><hr>");
+
+</script>
+</body>
+</html>

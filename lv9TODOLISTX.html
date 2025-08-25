@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Todo App</title>
+</head>
+<body>
+  <h1 id="main-heading">Todo App</h1>
+
+  <div class="grid-container">
+    <input id="todo-input" type="text" placeholder="Enter Todo here">
+    <input id="todo-date" type="date">
+    <button class='btn-todo' onclick="addTodo();">Add</button>
+  </div>
+
+  <div class="todo-container"></div>
+
+  <script>
+    let arr = [
+  {
+    item: 'Go to College',
+    Date: '4/10/2023' 
+  }
+];
+
+displayItems();
+
+function addTodo() {
+  let inputElement = document.querySelector('#todo-input');
+  let dateElement = document.querySelector('#todo-date');
+  let todoItem = inputElement.value;
+  let todoDate = dateElement.value;
+  arr.push({item: todoItem, Date: todoDate});//new values ko store ke liye push karega. 
+  inputElement.value = '';
+  dateElement.value = '';
+  displayItems();
+}
+
+function displayItems() {
+  let box = document.querySelector('.todo-container');
+  let X = '';
+  for (let i = 0; i < arr.length; i++) {
+    let {item, Date} = arr[i];
+    //printing hogA
+    X =X+ `
+      <span>${item}</span>
+      <span>${Date}</span>
+      <button class='btn-delete' onclick="arr.splice(${i}, 1);
+      displayItems();">Delete</button>
+    `;
+  }
+  box.innerHTML = X;
+  
+}
+  </script>
+</body>
+</html>

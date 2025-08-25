@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>//hum chahte hai ki object se acces kare na ki console se...
+        let product={
+            company:'mango',
+            price:456,
+            itemName:'T-shirt',
+            displyPrice:function(){
+                console.log(`Price of the product is ${this.price}`)
+                console.log(this.itemName);
+            }
+        };
+        product.displyPrice();//object se
+        console.log(product.itemName);//console se
+        product.itemName();//object se
+        product.displyPrice();//object se
+    </script>
+</body>
+</html>

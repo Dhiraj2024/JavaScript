@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let books = [
+  { title: "Atomic Habits", author: "James Clear" },
+  { title: "Deep Work", author: "Cal Newport" }
+];
+function findBookByAuthor(author) {
+    for (let book of books) {
+        if (book.author === author) {
+               return book.title;
+        }
+    }
+
+}
+console.log(findBookByAuthor("James Clear")); // Output: Atomic Habits
+    </script>
+</body>
+</html>

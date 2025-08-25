@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomodoro Timer</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+      background: #f2f2f2;
+    }
+    #timer {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🍅 Pomodoro Focus Timer</h2>
+  <div id="timer">25:00</div>
+
+  <button onclick="startTimer()" id="startBtn">Start</button>
+  <button onclick="pauseTimer()" id="pauseBtn" disabled>Pause</button>
+  <button onclick="resetTimer()">Reset</button>
+
+  <script>
+    let timeLeft = 25 * 60; // 25 minutes in seconds
+    let timerInterval;
+    let isRunning = false;
+
+    function updateDisplay() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      document.getElementById("timer").innerText =
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (!isRunning) {
+        timerInterval = setInterval(() => {
+          if (timeLeft > 0) {
+            timeLeft--;
+            updateDisplay();
+          } else {
+            clearInterval(timerInterval);
+            alert("⏰ Time's up! Take a break.");
+            isRunning = false;
+          }
+        }, 1000);
+        isRunning = true;
+        document.getElementById("startBtn").disabled = true;
+        document.getElementById("pauseBtn").disabled = false;
+      }
+    }
+
+    function pauseTimer() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      document.getElementById("startBtn").disabled = false;
+      document.getElementById("pauseBtn").disabled = true;
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      timeLeft = 25 * 60;
+      isRunning = false;
+      updateDisplay();
+      document.getElementById("startBtn").disabled = false;
+      document.getElementById("pauseBtn").disabled = true;
+    }
+
+    updateDisplay(); // initial display
+  </script>
+</body>
+</html>

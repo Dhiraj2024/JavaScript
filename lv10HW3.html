@@ -1,0 +1,36 @@
+<!-- Create a button which should grow double in size on
+clicking after 2 seconds.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>     
+    <style>
+        .btn-subscribe{
+            font-size: 15px;
+            height: 20px;
+            width: 80px;
+            background-color: rgb(217,17,12);
+            color: white;
+            border: none0;
+            border-radius: 4px;
+        }
+        .size-double{
+            font-size: 30px;
+            height: 40px;
+            width: 160px;
+        }
+    </style>
+</head>
+<body>  
+    <button class="btn-subscribe" onclick="setTimeout('doubleTheSize', 1000);">Subscribe</button>
+
+<script>
+    function doubleTheSize(){
+        let buttonElement=document.querySelector('.btn-subscribe');
+        buttonElement.classList.add('.size-double');
+    }
+</script></body>
+</html>

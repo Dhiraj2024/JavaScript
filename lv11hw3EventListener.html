@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  .btn, .btn2{
+    border-radius: 5px;
+    font-weight: 600;
+    color: aliceblue;
+    height: 30px;
+    width: 78px;
+    background-color: rgb(255, 0, 0);
+  }
+.btnhover{
+  border-radius: 5px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    height: 30px;
+    width: 90px;
+    background-color: rgba(255, 102, 0, 0.813);
+   
+}
+.btnhover2{
+  border-radius: 5px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    height: 30px;
+    width: 90px;
+    background-color: rgba(19, 166, 174, 0.823);
+   
+}
+</style>
+<body>
+    <button class="btn" >Subscribe</button>
+
+
+    <button class="btn2">Bell</button>
+    <script>
+//_____________________________________________________________Method(1)_____________
+        let element=document.querySelector('.btn');
+        element.addEventListener("click",event=>{
+        setTimeout(()=>{//set timeout hi without function to mujhe aisa likhna pada...
+        element.classList.add('btnhover');
+        element.innerText="Subscribed";},2000);
+        });
+
+//_____________________________________________________________Method(2)_____________
+        let element2=document.querySelector('.btn2');
+        element2.addEventListener('click',event=>
+        setTimeout(doublesize2,3000))
+     function doublesize2(){
+     let element2=document.querySelector('.btn2');
+     element2.classList.add('btnhover2');
+     element2.innerText="Belled";
+     }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let num=1;
+    while(num<=10){
+        console.log(num);
+        num=num+1;
+    }
+
+    let x=0;
+    while(x<=1){
+        console.log(x);
+        x=Math.random()*2;
+    }
+    console.log('final value x is'+x);
+
+    //do while
+    let num2=0;
+    do{
+            console.log(num2);
+            num2++;
+    }
+    while(num2<=10);
+
+    //for loop
+    for(let i=0;i<10;i++){
+        console.log(i);
+    }
+    //loop using array
+    let jax=[34,45,67,98,1];
+    for(let i=0;i<5;i++){
+        console.log(jax[i]);
+    }
+
+    //break
+    let brr=[2,4,5,6,7,1,9];
+    for(let i=0;i<brr.length;i++){
+        if(brr[i]==7){
+            console.log(`number founded at index ${i}`);
+            break;
+        }
+        console.log('still Loking');
+    }
+    //continue
+    for(let i=1;i<=25;i++){
+        if(i%2==0){
+            continue;
+        }
+        console.log(i);
+    }
+
+</script>
+    
+</body>
+</html>

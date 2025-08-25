@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task List with Local Storage</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    input, button { margin: 10px; }
+    ul { list-style-type: none; }
+    li { margin: 5px 0; }
+    .delete-btn { color: red; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Task List</h1>
+  <input type="text" id="taskInput" placeholder="Enter a task" />
+  <button id="addTaskBtn">Add Task</button>
+  <ul id="taskList"></ul>
+
+  <script >
+    // DOM Elements
+const taskInput =document.getElementById('taskInput');
+const addTaskBtn =document.getElementById('addTaskBtn');
+const taskList =document.getElementById('taskList');
+
+// Load tasks from localStorage
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  taskList.innerHTML = ''; // Clear the task list before re-rendering
+  tasks.forEach((task, index) => {
+    const taskItem = document.createElement('li');
+    taskItem.innerHTML = `${task} <span class="delete-btn" onclick="deleteTask(${index})">Delete</span>`;
+    taskList.appendChild(taskItem);
+  });
+}
+
+// Add task to the list
+function addTask() {
+  const task = taskInput.value.trim();
+  if (task !== '') {
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    taskInput.value = ''; // Clear input field
+    loadTasks(); // Re-render the task list
+  }
+}
+
+// Delete task from the list
+function deleteTask(index) {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks.splice(index, 1);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  loadTasks(); // Re-render the task list
+}
+
+// Event listeners
+addTaskBtn.addEventListener('click', addTask);
+taskInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    addTask(); // Add task when pressing 'Enter'
+  }
+});
+
+// Initial load of tasks
+loadTasks();
+
+  </script>
+</body>
+</html>

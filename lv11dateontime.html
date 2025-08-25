@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+     <h1 class="output1"></h1>
+     <h1 class="output2"></h1>
+     <h1 class="output3"></h1>
+     <h1 class="output4"></h1>
+     <h1 class="output5"></h1>
+
+    <script>
+let date=new Date();
+document.querySelector('.output1').innerHTML=`your year is ${date.getFullYear()}`
+document.querySelector('.output2').innerHTML=`your hours is ${date.getHours()}`
+if(date> 11.59){
+document.querySelector('.output4').innerHTML='Good morning';
+}
+else{
+    document.querySelector('.output5').innerHTML='Good evening';
+}
+
+document.querySelector('.output3').innerHTML=`your time is ${date.getTime()}`
+    </script>
+    
+</body>
+</html>

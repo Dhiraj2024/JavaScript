@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let people = [
+  { name: "Amit" },
+  { name: "Riya" },
+  { name: "Amit" },
+  { name: "Riya" },
+  { name: "Karan" }
+];
+
+let counts = {};
+
+for (let person of people) {
+  let name = person.name;
+
+  if (counts[name]) {
+    counts[name]++; // increase if already exists
+  } else {
+    counts[name] = 1; // first time
+  }
+}
+
+// Print the result
+for (let name in counts) {
+  console.log(`${name}: ${counts[name]}`);
+}
+
+    </script>
+</body>
+</html>

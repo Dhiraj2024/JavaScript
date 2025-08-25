@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cookie Login Demo</title>
+  </head>
+  <body>
+    <h2>Cookie-Based Login Demo</h2>
+
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+    <button onclick="checkStatus()">Check Status</button>
+
+    <p id="status"></p>
+
+    <script>
+      // Login function: Set cookie
+      function login() {
+        document.cookie =
+          "username=amit; expires=Fri, 1 Jan 2026 12:00:00 UTC; path=/";
+        alert("User logged in and remembered!");
+      }
+
+      // Logout function: Expire the cookie
+      function logout() {
+        document.cookie =
+          "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        alert("User logged out!");
+      }
+
+      // Check login status
+      function checkStatus() {
+        let status = document.getElementById("status");
+        if (document.cookie.includes("username=amit")) {
+          status.textContent = "✅ User is logged in.";
+        } else {
+          status.textContent = "❌ User is not logged in.";
+        }
+      }
+
+      // Auto check on page load
+      window.onload = checkStatus;
+    </script>
+  </body>
+</html>

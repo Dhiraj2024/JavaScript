@@ -1,0 +1,21 @@
+<!-- Create a function runTwice that takes a function as a
+parameter and then runs that method twice. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let printGreeting=()=>console.log('namaste');
+        let runTwice=inputFunction=>{
+        inputFunction();
+        inputFunction();
+    };
+runTwice(printGreeting);
+
+    </script>
+</body>
+</html>

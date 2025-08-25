@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Quote App</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    #quoteBox {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="quoteBox">
+    <p id="quote">Loading quote...</p>
+    <p id="author"></p>
+    <button onclick="getRandomQuote()">New Quote</button>
+  </div>
+
+  <script>
+    let quotes = [];
+
+    // Step 1: Fetch all quotes from API once
+    fetch("https://type.fit/api/quotes")
+      .then(res => res.json())
+      .then(data => {
+        quotes = data;
+        getRandomQuote(); // Show one quote immediately
+      })
+      .catch(err => {
+        document.getElementById("quote").innerText = "Error loading quotes.";
+        console.error(err);
+      });
+
+    // Step 2: Function to show random quote
+    function getRandomQuote() {
+      if (quotes.length === 0) return;
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const randomQuote = quotes[randomIndex];
+
+      document.getElementById("quote").innerText = `"${randomQuote.text}"`;
+      document.getElementById("author").innerText = `– ${randomQuote.author || "Unknown"}`;
+    }
+  </script>
+
+</body>
+</html>

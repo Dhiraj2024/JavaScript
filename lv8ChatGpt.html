@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Step 1: Set a value in localStorage (just for demonstration)
+localStorage.setItem('myText', 'hello world');  // You can skip this if the value is already set in localStorage
+
+// Step 2: Retrieve the value from localStorage
+let storedText = localStorage.getItem('myText');
+
+// Step 3: Convert the text to uppercase
+if (storedText) {
+    let upperCaseText = storedText.toUpperCase();  
+
+    // Step 4: Save the uppercase text back to localStorage
+    localStorage.setItem('myText', upperCaseText);
+
+    // Log the result to the console
+    console.log('Uppercase Text:', upperCaseText);
+} else {
+    console.log('No text found in localStorage');
+}
+
+
+// Store a string in localStorage
+localStorage.setItem('username', 'JohnDoe');
+
+// Retrieve the data from localStorage
+let username = localStorage.getItem('username');
+
+// Log the retrieved value
+console.log(username);  // Should print "JohnDoe"
+
+    </script>
+    
+</body>
+</html>
+
+
